@@ -9,6 +9,12 @@
 *.jar
 *.war
 *.ear
+
+# disk image
+*.dmg
+
+# hsqldb
+*.DS_Store
  
 # Maven
 target/
