@@ -6,6 +6,36 @@ public class RomanNumberConverter {
             return calculateToThree(number);
         }
 
+        String intermediateResult = calculateToNine(number);
+        if (intermediateResult != null){
+            return intermediateResult;
+        }
+        int division;
+        int remainder;
+
+        remainder = number % 10;
+        division = number / 10;
+
+        if (division == 1){
+            if (remainder == 0){
+                return "X";
+            }else if (remainder <= 3){
+                StringBuilder sb = new StringBuilder();
+                return sb.append("X").append(calculateToThree(remainder)).toString();
+            }else{
+                StringBuilder sb = new StringBuilder();
+                return sb.append("X").append(calculateToNine(remainder)).toString();
+            }
+        }else if (division == 2){
+            if (remainder == 0){
+                return "XX";
+            }
+        }
+
+        return null;
+    }
+
+    private static String calculateToNine(int number) {
         int remainder = number % 5;
         int division = number / 5;
 
@@ -25,15 +55,6 @@ public class RomanNumberConverter {
             }else{
                 StringBuilder sb = new StringBuilder();
                 return sb.append(calculateToThree(1)).append("X").toString();
-            }
-        }
-
-        remainder = number % 10;
-        division = number / 10;
-
-        if (division == 1){
-            if (remainder == 0){
-                return "X";
             }
         }
 

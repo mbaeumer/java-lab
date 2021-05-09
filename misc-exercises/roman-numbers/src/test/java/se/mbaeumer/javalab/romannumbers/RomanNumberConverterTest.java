@@ -56,6 +56,60 @@ class RomanNumberConverterTest {
         assertTrue("X".equals(RomanNumberConverter.getRomanNumber(10)));
     }
 
+    @Test
+    public void shouldGetXI(){
+        assertTrue("XI".equals(RomanNumberConverter.getRomanNumber(11)));
+    }
+
+    @Test
+    public void shouldGetXII(){
+        assertTrue("XII".equals(RomanNumberConverter.getRomanNumber(12)));
+    }
+
+    @Test
+    public void shouldGetXIII(){
+        assertTrue("XIII".equals(RomanNumberConverter.getRomanNumber(13)));
+    }
+
+    @Test
+    public void shouldGetXIV(){
+        assertTrue("XIV".equals(RomanNumberConverter.getRomanNumber(14)));
+    }
+
+    @Test
+    public void shouldGetXV(){
+        assertTrue("XV".equals(RomanNumberConverter.getRomanNumber(15)));
+    }
+
+    @Test
+    public void shouldGetXVI(){
+        assertTrue("XVI".equals(RomanNumberConverter.getRomanNumber(16)));
+    }
+
+    @Test
+    public void shouldGetXVII(){
+        assertTrue("XVII".equals(RomanNumberConverter.getRomanNumber(17)));
+    }
+
+    @Test
+    public void shouldGetXVIII(){
+        assertTrue("XVIII".equals(RomanNumberConverter.getRomanNumber(18)));
+    }
+
+    @Test
+    public void shouldGetXIX(){
+        assertTrue("XIX".equals(RomanNumberConverter.getRomanNumber(19)));
+    }
+
+    @Test
+    public void shouldGetXX(){
+        assertTrue("XX".equals(RomanNumberConverter.getRomanNumber(20)));
+    }
+
+
+
+
+
 
 
 
