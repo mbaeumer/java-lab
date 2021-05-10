@@ -29,6 +29,20 @@ public class RomanNumberConverter {
         }else if (division == 2){
             if (remainder == 0){
                 return "XX";
+            }else{
+                StringBuilder sb = new StringBuilder();
+                return sb.append("XX").append(calculateToNine(remainder)).toString();
+            }
+        }else if (division == 3){
+            if (remainder == 0){
+                return "XXX";
+            }else{
+                StringBuilder sb = new StringBuilder();
+                return sb.append("XXX").append(calculateToNine(remainder)).toString();
+            }
+        }else if (division == 4){
+            if (remainder == 0){
+                return "XL";
             }
         }
 

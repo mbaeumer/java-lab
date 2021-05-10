@@ -106,6 +106,109 @@ class RomanNumberConverterTest {
         assertTrue("XX".equals(RomanNumberConverter.getRomanNumber(20)));
     }
 
+    @Test
+    public void shouldGetXXI(){
+        assertTrue("XXI".equals(RomanNumberConverter.getRomanNumber(21)));
+    }
+
+    @Test
+    public void shouldGetXXII(){
+        assertTrue("XXII".equals(RomanNumberConverter.getRomanNumber(22)));
+    }
+
+    @Test
+    public void shouldGetXXIII(){
+        assertTrue("XXIII".equals(RomanNumberConverter.getRomanNumber(23)));
+    }
+
+    @Test
+    public void shouldGetXXIV(){
+        assertTrue("XXIV".equals(RomanNumberConverter.getRomanNumber(24)));
+    }
+
+    @Test
+    public void shouldGetXXV(){
+        assertTrue("XXV".equals(RomanNumberConverter.getRomanNumber(25)));
+    }
+
+    @Test
+    public void shouldGetXXVI(){
+        assertTrue("XXVI".equals(RomanNumberConverter.getRomanNumber(26)));
+    }
+
+    @Test
+    public void shouldGetXXVII(){
+        assertTrue("XXVII".equals(RomanNumberConverter.getRomanNumber(27)));
+    }
+
+    @Test
+    public void shouldGetXXVIII(){
+        assertTrue("XXVIII".equals(RomanNumberConverter.getRomanNumber(28)));
+    }
+
+    @Test
+    public void shouldGetXXIX(){
+        assertTrue("XXIX".equals(RomanNumberConverter.getRomanNumber(29)));
+    }
+
+    @Test
+    public void shouldGetXXX(){
+        assertTrue("XXX".equals(RomanNumberConverter.getRomanNumber(30)));
+    }
+
+    @Test
+    public void shouldGetXXXI(){
+        assertTrue("XXXI".equals(RomanNumberConverter.getRomanNumber(31)));
+    }
+
+    @Test
+    public void shouldGetXXXII(){
+        assertTrue("XXXII".equals(RomanNumberConverter.getRomanNumber(32)));
+    }
+
+    @Test
+    public void shouldGetXXXIII(){
+        assertTrue("XXXIII".equals(RomanNumberConverter.getRomanNumber(33)));
+    }
+
+    @Test
+    public void shouldGetXXXIV(){
+        assertTrue("XXXIV".equals(RomanNumberConverter.getRomanNumber(34)));
+    }
+
+    @Test
+    public void shouldGetXXXV(){
+        assertTrue("XXXV".equals(RomanNumberConverter.getRomanNumber(35)));
+    }
+
+    @Test
+    public void shouldGetXXXVI(){
+        assertTrue("XXXVI".equals(RomanNumberConverter.getRomanNumber(36)));
+    }
+
+    @Test
+    public void shouldGetXXXVII(){
+        assertTrue("XXXVII".equals(RomanNumberConverter.getRomanNumber(37)));
+    }
+
+    @Test
+    public void shouldGetXXXVIII(){
+        assertTrue("XXXVIII".equals(RomanNumberConverter.getRomanNumber(38)));
+    }
+
+    @Test
+    public void shouldGetXXXIX(){
+        assertTrue("XXXIX".equals(RomanNumberConverter.getRomanNumber(39)));
+    }
+
+    @Test
+    public void shouldGetXL(){
+        assertTrue("XL".equals(RomanNumberConverter.getRomanNumber(40)));
+    }
+
+
+
+
 
 
 
