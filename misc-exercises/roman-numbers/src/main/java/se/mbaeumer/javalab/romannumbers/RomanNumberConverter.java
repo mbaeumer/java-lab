@@ -43,6 +43,18 @@ public class RomanNumberConverter {
         }else if (division == 4){
             if (remainder == 0){
                 return "XL";
+            }else{
+                StringBuilder sb = new StringBuilder();
+                return sb.append("XL").append(calculateToNine(remainder)).toString();
+            }
+        }
+
+        remainder = number % 50;
+        division = number / 50;
+
+        if (division == 1){
+            if (remainder == 0){
+                return "L";
             }
         }
 
