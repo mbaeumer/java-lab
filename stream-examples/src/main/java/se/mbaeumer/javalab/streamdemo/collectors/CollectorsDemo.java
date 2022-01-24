@@ -6,14 +6,14 @@ import java.util.stream.Collectors;
 public class CollectorsDemo {
 
     public void doStuff(){
-        // joining
-        // averaging
-        // counting
-        // groupingBy
-        // max
-        // min
-        // reducing
-        // partitioning
+        // joining +
+        // averaging +
+        // counting +
+        // groupingBy +
+        // maxBy +
+        // minBy +
+        // reducing +
+        // partitioningBy +
         // summarizing
         // summing
         // teeing
@@ -42,9 +42,15 @@ public class CollectorsDemo {
         return nums.stream().collect(Collectors.counting());
     }
 
-    public static Map<Severity, List<Bug>> groupingByDemo(){
+    public static Map<Severity, List<Bug>> groupingByWithNonPrimitiveDemo(){
         List<Bug> nums = createBugs();
         return nums.stream().collect(Collectors.groupingBy(Bug::getSeverity));
+    }
+
+    public static Map<Integer, List<Integer>> groupingByWithIntegerDemo(){
+        List<Integer> numbers = List.of(5,9,9,7,5);
+        return numbers.stream().collect(Collectors.groupingBy(Integer::intValue));
+
     }
 
     public static Integer maxByDemo(){
@@ -55,6 +61,16 @@ public class CollectorsDemo {
     public static Integer minByDemo(){
         List<Integer> numbers = List.of(5,9,7,4,2);
         return numbers.stream().collect(Collectors.minBy(Comparator.naturalOrder())).orElseThrow(NoSuchElementException::new);
+    }
+
+    public static Integer reducingDemo(){
+        List<Integer> ints = List.of(5,7,3,8,8,7,3,3,3);
+        return ints.stream().collect(Collectors.reducing(0, (a,b) -> a+b));
+    }
+
+    public static Map<Boolean, List<Integer>> partitioningByDemo(){
+        List<Integer> ints = List.of(5,7,3,8,8,7,3,3,3);
+        return ints.stream().collect(Collectors.partitioningBy(e -> e % 2 == 0));
     }
 
     public static List<Bug> createBugs(){

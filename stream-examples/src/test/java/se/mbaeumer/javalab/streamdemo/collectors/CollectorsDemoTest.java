@@ -31,7 +31,7 @@ class CollectorsDemoTest {
 
     @Test
     void groupingByDemo() {
-        Map<Severity, List<Bug>> map = CollectorsDemo.groupingByDemo();
+        Map<Severity, List<Bug>> map = CollectorsDemo.groupingByWithNonPrimitiveDemo();
         List<Bug> highSeverityBugs = map.get(Severity.HIGH);
         assertEquals(5, highSeverityBugs.size());
     }
@@ -48,5 +48,25 @@ class CollectorsDemoTest {
         assertEquals(2, actual);
     }
 
+    @Test
+    void reducingDemo() {
+        int n = CollectorsDemo.reducingDemo();
+        assertEquals(47, n);
+    }
 
+    @Test
+    void partitioningDemo() {
+        Map<Boolean, List<Integer>> map = CollectorsDemo.partitioningByDemo();
+        List<Integer> entry = map.get(true);
+        assertEquals(2, entry.size());
+        assertEquals(entry.get(0), 8);
+    }
+
+    @Test
+    void groupingByWithIntegerDemo() {
+        Map<Integer, List<Integer>> map = CollectorsDemo.groupingByWithIntegerDemo();
+        List<Integer> fives = map.get(5);
+        assertEquals(2, fives.size());
+        assertEquals(5, fives.get(0));
+    }
 }
