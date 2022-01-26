@@ -73,6 +73,30 @@ public class CollectorsDemo {
         return ints.stream().collect(Collectors.partitioningBy(e -> e % 2 == 0));
     }
 
+    public static IntSummaryStatistics summarizingDemo(){
+        List<Integer> ints = List.of(5,7,3,8,8,7,3,3,3);
+        return ints.stream().collect(Collectors.summarizingInt(Integer::intValue));
+    }
+
+    public static Integer summingDemo(){
+        List<Integer> ints = List.of(5,7,3,8,8,7,3,3,3);
+        return ints.stream().collect(Collectors
+                .summingInt(Integer::intValue));
+    }
+
+    public static Map<String, Optional<Integer>> teeingDemo(){
+        List<Integer> ints = List.of(5,7,3,8,8,7,3,3,3);
+        return ints.stream().collect(Collectors
+                .teeing(Collectors.minBy(Comparator.comparing(Integer::intValue)),
+                        Collectors.maxBy(Comparator.comparing(Integer::intValue)),
+                        (e1, e2) -> {
+                            Map<String, Optional<Integer>> map = new HashMap<>();
+                            map.put("MIN", e1);
+                            map.put("MAX", e2);
+                            return map;
+                        }));
+    }
+
     public static List<Bug> createBugs(){
         List<Bug> bugs = new ArrayList<>();
 
@@ -89,4 +113,6 @@ public class CollectorsDemo {
 
         return bugs;
     }
+
+
 }
