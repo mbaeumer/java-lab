@@ -1,5 +1,6 @@
 package se.mbaeumer.javalab.functiondemo;
 
+import java.util.Collection;
 import java.util.function.Function;
 
 public class FunctionDemo {
