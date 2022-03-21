@@ -34,6 +34,7 @@ public class CollectorsDemo {
 
     public static Double averagingIntDemo(){
         List<String> nums = List.of("5", "7", "6");
+        //Collectors.averagingInt(ToIntFunction)
         return nums.stream().collect(Collectors.averagingInt(e -> Integer.parseInt(e)));
     }
 
@@ -44,6 +45,7 @@ public class CollectorsDemo {
 
     public static Map<Severity, List<Bug>> groupingByWithNonPrimitiveDemo(){
         List<Bug> nums = createBugs();
+        //Collectors.groupingBy(Function<? super T, ? extends K> classifier)
         return nums.stream().collect(Collectors.groupingBy(Bug::getSeverity));
     }
 
@@ -55,37 +57,48 @@ public class CollectorsDemo {
 
     public static Integer maxByDemo(){
         List<Integer> numbers = List.of(5,9,7,4,2);
+        //Collectors.maxBy(Comparator<? super T> comparator)
         return numbers.stream().collect(Collectors.maxBy(Comparator.naturalOrder())).orElseThrow(NoSuchElementException::new);
     }
 
     public static Integer minByDemo(){
         List<Integer> numbers = List.of(5,9,7,4,2);
+        //Collectors.minBy(Comparator<? super T> comparator)
         return numbers.stream().collect(Collectors.minBy(Comparator.naturalOrder())).orElseThrow(NoSuchElementException::new);
     }
 
     public static Integer reducingDemo(){
         List<Integer> ints = List.of(5,7,3,8,8,7,3,3,3);
+        //Collectors.reducing(T identity, BinaryOperator<T> op)
         return ints.stream().collect(Collectors.reducing(0, (a,b) -> a+b));
     }
 
     public static Map<Boolean, List<Integer>> partitioningByDemo(){
         List<Integer> ints = List.of(5,7,3,8,8,7,3,3,3);
+        //Collectors.partitioningBy(Predicate<? super T> predicate)
         return ints.stream().collect(Collectors.partitioningBy(e -> e % 2 == 0));
     }
 
     public static IntSummaryStatistics summarizingDemo(){
         List<Integer> ints = List.of(5,7,3,8,8,7,3,3,3);
+        //Collectors.summarizingInt(ToIntFunction<? super T> mapper)
         return ints.stream().collect(Collectors.summarizingInt(Integer::intValue));
     }
 
     public static Integer summingDemo(){
         List<Integer> ints = List.of(5,7,3,8,8,7,3,3,3);
+        //Collectors.summingInt(ToIntFunction<? super T> mapper)
         return ints.stream().collect(Collectors
                 .summingInt(Integer::intValue));
     }
 
     public static Map<String, Optional<Integer>> teeingDemo(){
         List<Integer> ints = List.of(5,7,3,8,8,7,3,3,3);
+        /*
+        Collectors.teeing(Collector<? super T, ?, R1> downstream1,
+                Collector<? super T, ?, R2> downstream2,
+                BiFunction<? super R1, ? super R2, R> merger)
+         */
         return ints.stream().collect(Collectors
                 .teeing(Collectors.minBy(Comparator.comparing(Integer::intValue)),
                         Collectors.maxBy(Comparator.comparing(Integer::intValue)),
@@ -113,6 +126,4 @@ public class CollectorsDemo {
 
         return bugs;
     }
-
-
 }
