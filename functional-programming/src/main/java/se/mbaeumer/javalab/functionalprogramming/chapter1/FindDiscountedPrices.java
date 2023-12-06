@@ -24,6 +24,6 @@ public class FindDiscountedPrices {
         bigDecimals.stream()
                 .filter(bd -> bd.compareTo(BigDecimal.valueOf(20)) > 0)
                 .map(bd -> bd.multiply(BigDecimal.valueOf(0.9)))
-                .reduce(BigDecimal.ZERO, BigDecimal::add)
+                .reduce(BigDecimal.ZERO, BigDecimal::add);
     }
 }
