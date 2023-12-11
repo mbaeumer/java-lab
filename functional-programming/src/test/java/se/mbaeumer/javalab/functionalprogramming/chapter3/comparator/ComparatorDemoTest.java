@@ -30,4 +30,15 @@ class ComparatorDemoTest {
         assertEquals("Bob", secondPerson.getName());
         assertEquals(35, secondPerson.getAge());
     }
+
+    @Test
+    void demoSortedDescendingListWithLambda() {
+        ComparatorDemo demo = new ComparatorDemo();
+        final List<Person> demoSortedList = demo.demoSortedDescendingListWithLambda();
+
+        assertNotNull(demoSortedList);
+        final Person firstPerson = demoSortedList.get(0);
+        assertEquals("Charlie", firstPerson.getName());
+        assertEquals(43, firstPerson.getAge());
+    }
 }

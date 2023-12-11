@@ -15,6 +15,17 @@ public class ComparatorDemo {
 
     }
 
+    public List<Person> demoSortedDescendingListWithLambda(){
+        final List<Person> people = List.of(new Person("Bob", 35), new Person("Adam", 27), new Person("Charlie", 43));
+
+        return people
+                .stream()
+                .sorted((people1, people2) -> people2.ageDifference(people1))
+                .collect(Collectors.toList());
+
+
+    }
+
     public List<Person> demoSortedAscendingListWithMethodReference(){
         final List<Person> people = List.of(new Person("Bob", 35), new Person("Adam", 27), new Person("Charlie", 43));
 
