@@ -26,6 +26,10 @@
                 <configuration>
                     <source>11</source>
                     <target>11</target>
+                    <compilerArgs>
+                        <arg>--add-exports</arg>
+                        <arg>java.desktop/com.apple.eio=illegalaccessdemo</arg>
+                    </compilerArgs>
                 </configuration>
             </plugin>
 
@@ -35,6 +39,10 @@
                 <version>0.0.3</version>
                 <configuration>
                     <mainClass>se.mbaeumer.javalab.illegalaccess.Main</mainClass>
+                    <compilerArgs>
+                        <arg>--add-exports</arg>
+                        <arg>java.desktop/com.apple.eio=illegalaccessdemo</arg>
+                    </compilerArgs>
                 </configuration>
             </plugin>
 
